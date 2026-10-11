@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: tradevault
+    runtime: node
+    plan: free
+    rootDir: apps/web
+    buildCommand: npm install --prefix . --omit=dev --workspaces=false && node scripts/build.mjs
+    startCommand: node server.mjs
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.21.0
+      - key: PORTAL_MODE
+        value: hosted
+      - key: DATABASE_URL
+        sync: false
+      - key: PORTAL_USERNAME
+        sync: false
+      - key: PORTAL_PASSWORD_HASH
+        sync: false
+      - key: FXUNIFI_USERNAME
+        sync: false
+      - key: FXUNIFI_PASSWORD
+        sync: false

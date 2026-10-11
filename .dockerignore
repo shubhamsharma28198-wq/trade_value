@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+**/dist
+.git
+.claude
+.env
+.env.*
+!.env.example
+*.log
+coverage
+.tradevault-local
+.artifacts
+.npm-cache
+.fxunifi-signin.html

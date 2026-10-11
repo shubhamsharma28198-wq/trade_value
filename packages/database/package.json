@@ -1,0 +1,29 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "migrate": "dotenv -e ../../.env -- prisma migrate dev",
+    "generate": "dotenv -e ../../.env -- prisma generate",
+    "db:push": "dotenv -e ../../.env -- prisma db push",
+    "db:seed": "node --env-file=../../.env --import tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "studio": "dotenv -e ../../.env -- prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.0",
+    "bcryptjs": "^2.0.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.10.0",
+    "@types/bcryptjs": "^2.4.3",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "dotenv-cli": "^8.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}
