@@ -1,0 +1,13 @@
+node_modules/
+.npm-cache/
+.tradevault-local/
+.artifacts/
+.fxunifi-signin.html
+dist/
+.env
+.env.*
+!.env.example
+.claude/
+coverage/
+*.log
+packages/database/generated/
